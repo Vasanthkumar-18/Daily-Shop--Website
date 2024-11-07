@@ -1,7 +1,7 @@
 // NAME FIRST  LETTER CHANGE   CODE & CUSTOME INPUT GETTING CODE 
 
-let customername = prompt('PLEASE TYPE YOUR NAME ');
-let customerlocation = prompt('PLEASE TYPE YOUR Location & pincode  ')
+let customername = prompt('PLEASE TYPE YOUR NAME :');
+let customerlocation = prompt('PLEASE TYPE YOUR ADDRESS , LOCATION & PINCODE :')
 
 let firstletter = customername.slice(0, 1);
 let capsfirstletter = firstletter.toUpperCase();
