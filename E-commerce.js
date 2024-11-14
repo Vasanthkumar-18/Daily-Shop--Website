@@ -1,46 +1,54 @@
-// NAME FIRST  LETTER CHANGE   CODE & CUSTOME INPUT GETTING CODE 
 
-let customername = prompt('PLEASE TYPE YOUR NAME :');
-let customerlocation = prompt('PLEASE TYPE YOUR ADDRESS , LOCATION & PINCODE :')
+document.addEventListener('DOMContentLoaded', () => {
 
-let firstletter = customername.slice(0, 1);
-let capsfirstletter = firstletter.toUpperCase();
-let restofname = customername.slice(1, customername.length);
-let customername1 = capsfirstletter + restofname;
+    // NAME FIRST  LETTER CHANGE   CODE & CUSTOME INPUT GETTING CODE 
 
-let locationfirstletter = customerlocation.slice(0, 1);
-let locationcapsfirstletter = locationfirstletter.toUpperCase();
-let locationrestofname = customerlocation.slice(1, customerlocation.length);
-let customerlocation1 = locationcapsfirstletter + locationrestofname;
+    let customerName = prompt('PLEASE TYPE YOUR NAME :');
+    let customerLocation = prompt('PLEASE TYPE YOUR ADDRESS , LOCATION & PINCODE :')
 
-// ADD CART REMOVER CART CODE
+    let firstLetterSlice = customerName.slice(0, 1);
+    let capsFirstLetter = firstLetterSlice.toUpperCase();
+    let restOfName = customerName.slice(1, customerName.length);
+    let capsCustomerName = capsFirstLetter + restOfName;
 
-let cartCount = 0;
+    let locationFirstLetter = customerLocation.slice(0, 1);
+    let locationCapsFirstLetter = locationFirstLetter.toUpperCase();
+    let locationRestOfName = customerLocation.slice(1, customerLocation.length);
+    let capsCustomerLocation = locationCapsFirstLetter + locationRestOfName;
 
+    // ADD CART REMOVER CART CODE
 
-// NAME FIRST  LETTER CHANGE   CODE & CUSTOME INPUT GETTING CODE 
-
-document.getElementById("customername").innerHTML = ('Hello,  ' + customername1);
-document.getElementById("customerlocation").innerHTML = (customerlocation1);
+    let cartCount = 0;
 
 
-// ADD CART REMOVER CART CODE IN ALL PRDUCTS 
+    // NAME FIRST  LETTER CHANGE   CODE & CUSTOME INPUT GETTING CODE 
 
-document.querySelectorAll(' .add-cart , .add-cart1').forEach(button => {
-    button.addEventListener('click', () => {
-        if (button.innerText === 'Add To Cart') {
-            button.innerText = 'Remove To Cart';
-            cartCount++;
-            alert(' Yay! Your Item is Now in Your Cart! 🛍️ 🛒');
-        } else {
-            button.innerText = 'Add To Cart';
-            cartCount--;
-            if (cartCount < 0) cartCount = 0;
-            alert('Cart Update: Item Removed🙁;');
-        }
-        if (cartCount === 0) {
-            button.innerText = 'Add To Cart';
-        }
-        document.querySelector('.cart-count').innerText = cartCount;
+    document.querySelector("#customername").innerHTML = ('Hello,  ' + capsCustomerName);
+    document.querySelector("#customerlocation").innerHTML = (capsCustomerLocation);
+
+
+    // ADD CART REMOVER CART CODE IN ALL PRDUCTS 
+
+    document.querySelectorAll(' .add-cart , .add-cart1').forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.innerText === 'Add To Cart') {
+                button.innerText = 'Remove To Cart';
+                cartCount++;
+                alert(' Yay! Your Item is Now in Your Cart! 🛍️ 🛒');
+            } else {
+                button.innerText = 'Add To Cart';
+                cartCount--;
+                if (cartCount < 0) cartCount = 0;
+                alert('Cart Update: Item Removed🙁;');
+            }
+            if (cartCount === 0) {
+                button.innerText = 'Add To Cart';
+            }
+            document.querySelector('.cart-count').innerText = cartCount;
+        });
     });
+
+
+
+
 });
